@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Resmi Badan Eksekutif Siswa Santri (BESS). ADHIKARA 2026/2027.">
+    <title>BESS | Badan Eksekutif Siswa Santri - Official</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#064e3b', /* Hijau Islami Tua */
+                            800: '#065f46',
+                            700: '#047857',
+                            500: '#10b981', /* Hijau Aksen */
+                        },
+                        gold: {
+                            500: '#d97706', /* Emas Premium */
+                            400: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #f8fafc; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        
+        /* Animasi Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism Navbar */
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #d97706; /* Emas pada hover */
+        }
+
+        /* Gradient Overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(4, 120, 87, 0.7) 100%);
+        }
+    </style>
+</head>
+<body class="text-slate-700 antialiased overflow-x-hidden">
+
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <img src="gambar/logobess.png" alt="LOGO" class="h-12 w-auto">
+                    <span id="nav-brand" class="font-heading font-bold text-2xl text-white tracking-tight hidden sm:block">BESS</span>
+                </div>
+
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-white font-medium hover:text-gold-400 transition">Home</a>
+                    <a href="#tentang" class="nav-link text-white font-medium hover:text-gold-400 transition">Tentang Kami</a>
+                    <a href="#departemen" class="nav-link text-white font-medium hover:text-gold-400 transition">Departemen</a>
+                    <a href="#berita" class="nav-link text-white font-medium hover:text-gold-400 transition">Berita</a>
+                    <a href="#galeri" class="nav-link text-white font-medium hover:text-gold-400 transition">Galeri</a>
+                    <a href="#kontak" class="bg-gold-500 hover:bg-gold-400 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg">Hubungi Kami</a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 flex-col gap-4 px-6 lg:hidden">
+            <a href="#home" class="block font-medium text-brand-900 hover:text-gold-500">Home</a>
+            <a href="#tentang" class="block font-medium text-brand-900 hover:text-gold-500">Tentang Kami</a>
+            <a href="#departemen" class="block font-medium text-brand-900 hover:text-gold-500">Departemen</a>
+            <a href="#berita" class="block font-medium text-brand-900 hover:text-gold-500">Berita</a>
+            <a href="#galeri" class="block font-medium text-brand-900 hover:text-gold-500">Galeri</a>
+            <a href="#kontak" class="block font-medium text-brand-900 hover:text-gold-500">Kontak</a>
+        </div>
+    </header>
+
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="gambar/background.JPG" alt="Pesantren Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+            <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight reveal active">
+                BADAN EKSEKUTIF <br><span class="text-gold-400">SISWA SANTRI</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-200 font-medium mb-8 reveal active" style="transition-delay: 0.1s;">
+                "ADHIKARA 2026/2027"
+            </p>
+            <p class="text-base md:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-light reveal active" style="transition-delay: 0.2s;">
+                BESS adalah representasi semangat kolaborasi, kepemimpinan, dan inovasi santri. Sebagai organisasi yang berdiri sejak 2013, BESS hadir untuk menginspirasi, menggerakkan, dan membangun generasi santri yang aktif, kreatif, serta berintegritas dalam menghadapi tantangan masa depan.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 reveal active" style="transition-delay: 0.3s;">
+                <a href="#tentang" class="bg-gold-500 hover:bg-gold-400 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl shadow-gold-500/20">Pelajari Lebih Lanjut</a>
+                <a href="#kontak" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-900 px-8 py-4 rounded-full font-bold text-lg transition">Gabung Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 -mt-32 relative z-20 mb-24">
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-t-4 border-transparent">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-brand-900 mb-3">Kepemimpinan Santri</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Membentuk karakter pemimpin yang adil, bijaksana, dan berlandaskan nilai-nilai Al-Qur'an dan Sunnah.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-t-4 border-transparent">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-brand-900 mb-3">Disiplin & Integritas</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Menanamkan budaya tepat waktu dan kejujuran sebagai pondasi utama kepribadian santri.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-t-4 border-transparent">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-brand-900 mb-3">Aktif & Produktif</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Mendorong santri untuk terus berkarya, memaksimalkan potensi diri di berbagai bidang keilmuan.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-t-4 border-transparent">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-brand-900 mb-3">Kolaboratif & Inovatif</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Membangun sinergi antar lini untuk melahirkan solusi dan program yang relevan dengan perkembangan zaman.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-t border-slate-100 reveal">
+                <div class="text-center">
+                    <span class="block font-heading text-4xl md:text-5xl font-bold text-brand-800 mb-2 counter" data-target="150">0</span>
+                    <span class="text-gold-500 font-bold text-lg">+</span>
+                    <p class="text-slate-500 font-medium uppercase tracking-wider text-xs mt-2">Jumlah Anggota</p>
+                </div>
+                <div class="text-center">
+                    <span class="block font-heading text-4xl md:text-5xl font-bold text-brand-800 mb-2 counter" data-target="10">0</span>
+                    <span class="text-gold-500 font-bold text-lg">+</span>
+                    <p class="text-slate-500 font-medium uppercase tracking-wider text-xs mt-2">Jumlah Kegiatan</p>
+                </div>
+                <div class="text-center">
+                    <span class="block font-heading text-4xl md:text-5xl font-bold text-brand-800 mb-2 counter" data-target="2013">0</span>
+                    <p class="text-slate-500 font-medium uppercase tracking-wider text-xs mt-2">Tahun Berdiri</p>
+                </div>
+                <div class="text-center">
+                    <span class="block font-heading text-4xl md:text-5xl font-bold text-brand-800 mb-2 counter" data-target="5">0</span>
+                    <span class="text-gold-500 font-bold text-lg">+</span>
+                    <p class="text-slate-500 font-medium uppercase tracking-wider text-xs mt-2">Program / Prestasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 text-gold-500 text-sm font-bold uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-book-open"></i> Profil Organisasi
+                    </div>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-900 mb-6 leading-tight">Sejarah Organisasi</h2>
+                    <div class="space-y-4 text-slate-600 leading-relaxed text-justify">
+                        <p>BESS lahir dari kesadaran akan pentingnya sebuah wadah organisasi yang mampu menjadi sarana pembinaan karakter sekaligus media aspirasi santri. Sejak awal berdirinya, BESS dirancang untuk berperan sebagai penggerak kegiatan santri, serta menjadi jembatan komunikasi antara pihak pesantren dan seluruh siswa santri.</p>
+                        <p>Dalam perjalanan awalnya, BESS memulai dengan struktur organisasi yang sederhana dan program kerja yang berfokus pada pembinaan kedisiplinan, peningkatan kualitas ibadah, serta pengembangan kegiatan edukatif dan sosial. Seiring berjalannya waktu, organisasi ini terus berkembang baik dari segi sistem manajemen, cakupan program, maupun partisipasi aktif para santri.</p>
+                        <p>Hingga saat ini, BESS telah menjadi organisasi yang memiliki peran strategis dalam menciptakan lingkungan pesantren yang dinamis, terorganisir, dan inspiratif. Berbagai program kerja yang dijalankan mencakup bidang pendidikan, keagamaan, sosial, serta pengembangan minat dan bakat santri.</p>
+                        <p>Dengan berlandaskan nilai-nilai keislaman, kebersamaan, dan tanggung jawab, BESS terus berkomitmen untuk mencetak generasi santri yang berakhlak mulia, berilmu, serta memiliki jiwa kepemimpinan yang kuat. Keberadaan BESS diharapkan dapat terus menjadi motor penggerak perubahan positif dan kontribusi nyata bagi kemajuan pesantren.</p>
+                    </div>
+                </div>
+                <div class="relative reveal">
+                    <div class="absolute -inset-4 bg-gold-500/20 rounded-[2rem] transform rotate-3"></div>
+                    <img src="gambar/sejarah.JPG" alt="Sejarah BESS" class="relative rounded-[2rem] shadow-2xl object-cover h-[500px] w-full">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 reveal">
+                <div class="bg-brand-900 p-10 md:p-14 rounded-3xl text-white shadow-xl relative overflow-hidden group">
+                    <i class="fa-solid fa-eye absolute -right-6 -bottom-6 text-9xl text-white opacity-5 group-hover:scale-110 transition duration-500"></i>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-gold-500 rounded-full flex items-center justify-center text-xl"><i class="fa-solid fa-bullseye text-white"></i></div>
+                        <h3 class="font-heading text-3xl font-bold">Visi Kami</h3>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-check-circle text-gold-400 mt-1.5 text-lg"></i>
+                            <span class="text-lg text-slate-200">Menjadikan siswa santri yang berbudi pekerti luhur sesuai sunnah.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-check-circle text-gold-400 mt-1.5 text-lg"></i>
+                            <span class="text-lg text-slate-200">Membentuk siswa santri untuk menjadi pribadi yang disiplin.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-10 md:p-14 rounded-3xl border border-slate-200 shadow-lg relative overflow-hidden group">
+                    <i class="fa-solid fa-rocket absolute -right-6 -bottom-6 text-9xl text-brand-900 opacity-5 group-hover:scale-110 transition duration-500"></i>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-brand-800 rounded-full flex items-center justify-center text-xl text-white"><i class="fa-solid fa-flag"></i></div>
+                        <h3 class="font-heading text-3xl font-bold text-brand-900">Misi Kami</h3>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4 bg-slate-50 p-4 rounded-xl">
+                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <span class="text-slate-600">Memberi contoh dan mengedukasi bagaimana adab-adab yang luhur dan baik.</span>
+                        </li>
+                        <li class="flex items-start gap-4 bg-slate-50 p-4 rounded-xl">
+                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <span class="text-slate-600">Mengajak siswa santri untuk melaksanakan kewajiban secara teratur dan disiplin.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="departemen" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-2 block">Struktur Organisasi</span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-brand-900 mb-6">Lini Departemen BESS</h2>
+                <p class="text-slate-500 text-lg">Pilar-pilar penggerak program kerja organisasi yang berdedikasi penuh untuk kemajuan dan kesejahteraan santri.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover reveal">
+                    <div class="w-16 h-16 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-brand-700 text-2xl mb-6">
+                        <i class="fa-solid fa-graduation-cap outline-style"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-900 mb-4">Departemen Pendidikan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Departemen Pendidikan menjadi penggerak utama dalam meningkatkan kualitas keilmuan santri melalui kegiatan yang mendidik, membangun, dan berorientasi pada masa depan.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover reveal" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-brand-700 text-2xl mb-6">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-900 mb-4">Departemen Kebersihan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Departemen Kebersihan menjadi garda terdepan dalam membangun budaya hidup bersih dan lingkungan yang tertata, sebagai wujud kepedulian dan tanggung jawab bersama.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover reveal" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-brand-700 text-2xl mb-6">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-900 mb-4">Departement ekstrakulikuer</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Departemen Ekstrakurikuler menjadi wadah pengembangan diri santri dalam bidang minat dan bakat, guna menciptakan generasi yang aktif, kreatif, dan berprestasi.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover reveal">
+                    <div class="w-16 h-16 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-brand-700 text-2xl mb-6">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-900 mb-4">Departemen sarana prasarana</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Departemen Sarana Prasarana BESS bertanggung jawab dalam pengelolaan, pemeliharaan, dan penyediaan fasilitas guna menunjang kelancaran seluruh kegiatan santri.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover reveal" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-brand-700 text-2xl mb-6">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-900 mb-4">Departemen Olahraga</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Departemen Olahraga menjadi wadah pengembangan fisik dan sportivitas santri guna membentuk pribadi yang sehat, disiplin, dan berjiwa kompetitif.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover reveal" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-brand-700 text-2xl mb-6">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-900 mb-4">Departemen Kesehatan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Departemen Kesehatan BESS berperan dalam menjaga dan meningkatkan kesehatan santri melalui program yang berfokus pada kebersihan, pencegahan penyakit, serta pelayanan kesehatan dasar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-900 relative overflow-hidden text-center reveal">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#d97706 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white mb-6">Bergabung dan Berkontribusi Bersama BESS</h2>
+            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">Mari asah jiwa kepemimpinan, kembangkan potensi, dan ciptakan karya nyata yang bermanfaat bagi pesantren dan agama.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#kontak" class="bg-white text-brand-900 hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl">Hubungi Kami</a>
+                <a href="#kontak" class="bg-gold-500 hover:bg-gold-400 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl">Daftar / Gabung</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="berita" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <span class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-2 block">Pusat Informasi</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-900">Berita & Artikel</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-2 text-brand-700 font-semibold hover:text-gold-500 transition">
+                    Lihat Semua <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-3xl overflow-hidden shadow-md card-hover reveal">
+                    <img src="gambar/berita1.JPG" alt="Berita 1" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-xs text-gold-500 font-bold uppercase mb-3">
+                            <i class="fa-regular fa-calendar"></i> 15 Februari 2026
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-brand-900 mb-3 hover:text-brand-700 cursor-pointer transition">Sambangan dan penerimaan raport tahun ajaran 2025/2026</h3>
+                        <p class="text-slate-500 text-sm mb-6 line-clamp-2">Kegiatan penerimaan raport dan sambangan santri Pondok Pesantren Sirojul Mukhlasin 2 yang dilaksanakan pada tanggal 15 Februari berlangsung dengan tertib dan penuh khidmat. Acara ini menjadi momen penting bagi para wali santri untuk menerima laporan hasil belajar sekaligus mengetahui perkembangan putra-putrinya selama menempuh pendidikan di pondok pesantren. .</p>
+                        <a href="#" class="text-brand-700 font-semibold text-sm hover:text-gold-500 transition">Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-3xl overflow-hidden shadow-md card-hover reveal" style="transition-delay: 0.1s;">
+                    <img src="gambar/berita2.JPG" alt="Berita 2" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-xs text-gold-500 font-bold uppercase mb-3">
+                            <i class="fa-regular fa-calendar"></i>12 Februari 2026
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-brand-900 mb-3 hover:text-brand-700 cursor-pointer transition">penutupan maulid pada tanggal 12 februari 2026</h3>
+                        <p class="text-slate-500 text-sm mb-6 line-clamp-2">Kegiatan penutupan maulid pada tanggal 12 februari 2026 alhamdulillah berjalan lancar dan khidmat sesuai perencanaan acara yang sudah dimusyawarahkan oleh anggota bess</p>
+                        <a href="#" class="text-brand-700 font-semibold text-sm hover:text-gold-500 transition">Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-3xl overflow-hidden shadow-md card-hover reveal" style="transition-delay: 0.2s;">
+                    <img src="gambar/berita3.JPG" alt="Berita 3" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-xs text-gold-500 font-bold uppercase mb-3">
+                            <i class="fa-regular fa-calendar"></i> 16 Februari 2026
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-brand-900 mb-3 hover:text-brand-700 cursor-pointer transition">Presiden Cup 2026</h3
+                        <p class="text-slate-500 text-sm mb-6 line-clamp-2">BESS Kegiatan President Cup merupakan ajang kompetisi sepak bola antar departemen di lingkungan Pondok Pesantren Sirojul Mukhlasin 2 yang diselenggarakan sebagai bentuk pengembangan minat dan bakat santri di bidang olahraga/p>
+                        <a href="#" class="text-brand-700 font-semibold text-sm hover:text-gold-500 transition">Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-10 md:hidden">
+                <a href="#" class="bg-slate-200 text-brand-900 px-6 py-3 rounded-full font-bold text-sm">Lihat Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-2 block">Dokumentasi</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-900">Galeri Kegiatan BESS</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+                <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="gambar/galeri1.JPG" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Galeri">
+                    <div class="absolute inset-0 bg-brand-900/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="gambar/galeri2.JPG" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Galeri">
+                    <div class="absolute inset-0 bg-brand-900/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="gambar/galeri3.JPG" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Galeri">
+                    <div class="absolute inset-0 bg-brand-900/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="gambar/galeri4.JPG" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Galeri">
+                    <div class="absolute inset-0 bg-brand-900/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <span class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-2 block">Hubungi Kami</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-900 mb-8">Informasi Kontak & Sekretariat</h2>
+                    
+                    <ul class="space-y-6 mb-10">
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center text-gold-500 flex-shrink-0 text-xl"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 class="font-heading font-bold text-brand-900">Alamat Lengkap</h4>
+                                <p class="text-slate-600 text-sm">Kalibening Atas No.64, Gembongan, Payaman, Kec. Secang, Kabupaten Magelang, Jawa Tengah 56195</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center text-gold-500 flex-shrink-0 text-xl"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <h4 class="font-heading font-bold text-brand-900">WhatsApp Resmi</h4>
+                                <p class="text-slate-600 text-sm">0895351312784</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center text-gold-500 flex-shrink-0 text-xl"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 class="font-heading font-bold text-brand-900">Email</h4>
+                                <p class="text-slate-600 text-sm">bessaliyah032@gmail.com</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center text-gold-500 flex-shrink-0 text-xl"><i class="fa-brands fa-instagram"></i></div>
+                            <div>
+                                <h4 class="font-heading font-bold text-brand-900">Instagram</h4>
+                                <a href="https://www.instagram.com/bessaliyah_yajri/" target="_blank" class="text-brand-700 hover:text-gold-500 text-sm transition">@bessaliyah_yajri</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="rounded-2xl overflow-hidden shadow-lg h-64 border border-slate-200">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15814.708819543166!2d110.2312!3d-7.3822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjInNTUuOSJTIDExMMKwMTMnNTIuMyJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2rem] shadow-xl border border-slate-100 reveal" style="transition-delay: 0.2s;">
+                    <h3 class="font-heading text-2xl font-bold text-brand-900 mb-6">Kirim Pesan Langsung</h3>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nama Lengkap</label>
+                            <input type="text" id="name" class="w-full px-5 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-slate-50 focus:bg-white" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Alamat Email</label>
+                            <input type="email" id="email" class="w-full px-5 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-slate-50 focus:bg-white" placeholder="emailanda@contoh.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Pesan / Pertanyaan</label>
+                            <textarea id="message" rows="5" class="w-full px-5 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-slate-50 focus:bg-white" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-4 rounded-xl shadow-lg transition">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-white pt-20 pb-10 border-t-4 border-gold-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="gambar/logobess.png" alt="Logo BESS White" class="h-12 w-auto">
+                        <span class="font-heading font-bold text-2xl tracking-tight">BESS</span>
+                    </div>
+                    <p class="text-brand-100 text-sm leading-relaxed mb-6 max-w-md">
+                        Badan Eksekutif Siswa Santri (BESS) adalah organisasi resmi pembinaan karakter dan aspirasi pelajar pesantren. Membangun generasi santri berintegritas, disiplin, dan berdaya saing global.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/bessaliyah_yajri/" target="_blank" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-gold-500 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-gold-500 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-gold-500 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6">Navigasi Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-brand-100 hover:text-gold-400 text-sm transition">Beranda Utama</a></li>
+                        <li><a href="#tentang" class="text-brand-100 hover:text-gold-400 text-sm transition">Profil & Sejarah</a></li>
+                        <li><a href="#departemen" class="text-brand-100 hover:text-gold-400 text-sm transition">Struktur Departemen</a></li>
+                        <li><a href="#berita" class="text-brand-100 hover:text-gold-400 text-sm transition">Berita Terbaru</a></li>
+                        <li><a href="#kontak" class="text-brand-100 hover:text-gold-400 text-sm transition">Kontak & Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6">Sekretariat</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-brand-100">
+                            <i class="fa-solid fa-map-location-dot mt-1 text-gold-500"></i>
+                            <span>Kalibening Atas No.64, Gembongan, Payaman, Kec. Secang, Magelang.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-100">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>0895351312784</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-100">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <span>bessaliyah032@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-brand-200">&copy; 2026 Badan Eksekutif Siswa Santri (BESS). Hak Cipta Dilindungi.</p>
+                <p class="text-sm text-brand-200">Official Website Badan Eksekutif Siswa Santri (BESS)</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/62895351312784" target="_blank" class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // 1. Sticky Navbar & Style Change on Scroll
+        const navbar = document.getElementById('navbar');
+        const navBrand = document.getElementById('nav-brand');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled', 'py-3');
+                navbar.classList.remove('py-5');
+                navBrand.classList.replace('text-white', 'text-brand-900');
+                navLinks.forEach(link => link.classList.replace('text-white', 'text-slate-700'));
+                mobileMenuBtn.classList.replace('text-white', 'text-brand-900');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-3');
+                navbar.classList.add('py-5');
+                navBrand.classList.replace('text-brand-900', 'text-white');
+                navLinks.forEach(link => link.classList.replace('text-slate-700', 'text-white'));
+                mobileMenuBtn.classList.replace('text-brand-900', 'text-white');
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // 3. Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // 4. Counter Animation (Statistik)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; 
+
+        const startCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        };
+
+        const counterObserver = new IntersectionObserver(startCounters, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    </script>
+</body>
+</html>
